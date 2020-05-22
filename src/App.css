@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+.pizza-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pizza-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pizza-title {
+  margin-bottom: 2rem;
+}
+
+.toppings {
+  text-align: center;
+}
+
+.log {
+  display: flex;
+  flex-direction: column;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.pizza-link {
+  display: flex;
+  justify-content: center;
+}
+
+.pizza-form-container {
+  margin-top: 1rem;
+}
+
+.gluten-free {
+  text-align: center;
+}
+
+#submit {
+  margin-top: 2rem;
+}
+
+.log-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
