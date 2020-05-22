@@ -14,11 +14,11 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
 
-The useRouteMatch hook is used for getting access to its match data, it allows us to render a route all by itself and let us use strict and exact paramaters
+The useRouteMatch hook is used for getting access to its match data without actually rendering a <Route> and let us use strict and exact paramaters
 
 2. How would you explain form validation to someone who has never programmed before?
 
-Form validation allows us to make sure that what the user is typing in is something that we wanted to be process and will be alright to be submit.
+Form validation allows us to make sure that what the user is putting in something that we wanted to be process and will be alright to be submit.
 We can further inform the user if their input is invalid and prevent submission until it is fixed
 
 3. In 1-2 sentences, define end to end testing.
