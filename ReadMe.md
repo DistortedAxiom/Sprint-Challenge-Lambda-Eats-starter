@@ -23,7 +23,7 @@ We can further inform the user if their input is invalid and prevent submission 
 
 3. In 1-2 sentences, define end to end testing.
 
-End to end testing allows us to automate testing without being done by human tester. We are able to simulate user interaction from the start of their visit to the end, this let us
+End to end testing allows us to automate testing without being done by human tester. We are able to simulate user interaction from the start of their visit to end, this let us
 make sure that all the process in the flow works as we intend it to.
 
 You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section **will** prevent you from passing this challenge.
