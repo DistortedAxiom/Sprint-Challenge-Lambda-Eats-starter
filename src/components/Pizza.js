@@ -1,5 +1,6 @@
 import React from "react";
 import {useState,useEffect} from "react";
+import {Link} from 'react-router-dom';
 import * as yup from "yup";
 import axios from "axios";
 import "../App.css";
@@ -92,7 +93,8 @@ export default function Pizza(props) {
     return (
         <div className="pizza-container">
             <h1>Lambda Eats!</h1>
-            <div>
+            <Link to='/' className='home-link'>Home</Link>
+            <div className="pizza-form-container">
                 <h2>Order your pizza!</h2>
 
                 <form className="pizza-form" onSubmit={(event) => submitHandler(event)}>
@@ -155,7 +157,7 @@ export default function Pizza(props) {
                             name="instructions"
                             value={order.instructions}
                             onChange={(event) => changeHandler(event)}/>
-                    <button id="submit" disabled={disabled}>Submit</button>
+                    <button id="submit" disabled={disabled}>Add to Order</button>
                     {processedOrder.size.length > 0 ? <p>Check the console for your order!</p> : null}
                 </form>
             </div>

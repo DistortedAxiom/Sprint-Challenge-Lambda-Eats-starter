@@ -10,6 +10,10 @@ describe('Form Input', function() {
     it('Size', function() {
         cy.get('select[name="size"]')
     })
+
+    it('Special Instructions', function() {
+        cy.get('textarea[name="instructions"]')
+    })
 })
 
 describe('Form Validation', function() {
@@ -56,6 +60,11 @@ describe('Form Submission', function() {
         .check()
         cy.get('input[name="sausage"]')
         .check()
+    })
+
+    it('Can submit special instructions', function() {
+        cy.get('textarea[name="instructions"]')
+        .type('Test instructions')
     })
 
     it('Submit Button is Enabled', function() {

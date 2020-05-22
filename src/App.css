@@ -42,6 +42,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .pizza-form {
@@ -49,6 +50,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 1.5rem;
 }
 
 .toppings {
@@ -58,4 +60,24 @@
 .log {
   display: flex;
   flex-direction: column;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.pizza-link {
+  display: flex;
+  justify-content: center;
+}
+
+.pizza-form-container {
+  margin-top: 1rem;
+}
+
+#submit {
+  margin-top: 2rem;
 }
