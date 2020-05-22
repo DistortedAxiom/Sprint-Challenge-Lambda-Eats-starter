@@ -9,7 +9,9 @@ const FormSchema = yup.object().shape({
         .string()
         .required('Please select a pizza size'),
     instructions: yup
-        .string()
+        .string(),
+    substitute: yup
+        .boolean()
 });
 
 export default FormSchema;

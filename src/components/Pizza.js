@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import * as yup from "yup";
 import axios from "axios";
 import "../App.css";
+import {CustomInput} from 'reactstrap';
 import FormSchema from '../validation/FormSchema';
 
 export default function Pizza(props) {
@@ -18,13 +19,16 @@ export default function Pizza(props) {
             pepper: false,
             onion: false,
         },
-        instructions: ''
+        instructions: '',
+        substitute: false,
     }
 
     const [errors, setErrors] = useState({
         name: '',
         size: '',
     });
+
+    const [log, setLog] = useState()
 
     const initialDisabled = true;
 
@@ -67,13 +71,19 @@ export default function Pizza(props) {
                 [name]: checked
             }
         })
-    }
+    };
+
+    const substituteChange = ({ target }) =>
+        setOrder(order => (
+        { ...order, [target.name]: !order[target.name] }
+    ));
 
     const submitHandler = (event) => {
         event.preventDefault();
         axios.post('https://reqres.in/api/users', order)
         .then(res => {
             setProcessedOrder(res.data)
+            setLog(res.data)
         })
         .catch(err => {
             console.log(err);
@@ -87,7 +97,7 @@ export default function Pizza(props) {
         })
     }, [order])
 
-    console.log(processedOrder)
+    console.log(log)
 
 
     return (
@@ -95,9 +105,8 @@ export default function Pizza(props) {
             <h1>Lambda Eats!</h1>
             <Link to='/' className='home-link'>Home</Link>
             <div className="pizza-form-container">
-                <h2>Order your pizza!</h2>
-
                 <form className="pizza-form" onSubmit={(event) => submitHandler(event)}>
+                <h2 className="pizza-title">Order your pizza!</h2>
                     <label>
                     {errors.name.length > 0 ? <p>{errors.name}</p> : null}
                         Name:
@@ -151,6 +160,10 @@ export default function Pizza(props) {
                                    checked={order.toppings.onion}
                                    onChange={checkboxChange}/>
                             </label>
+                        <label className="gluten-free">
+                            Choose your substitute
+                            <CustomInput type="switch" id="substitute" name="substitute" label = "Gluten Free Crust (+ $1.00)" onChange={substituteChange} checked={order.substitute}/>
+                        </label>
                     <h4>Special Instructions</h4>
                         <textarea
                             type="text"
@@ -158,8 +171,8 @@ export default function Pizza(props) {
                             value={order.instructions}
                             onChange={(event) => changeHandler(event)}/>
                     <button id="submit" disabled={disabled}>Add to Order</button>
-                    {processedOrder.size.length > 0 ? <p>Check the console for your order!</p> : null}
                 </form>
+                {processedOrder.size.length > 0 ? <div className="log-container"><pre>{JSON.stringify(log, null, 2)}</pre></div> : null}
             </div>
         </div>
     )

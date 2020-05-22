@@ -50,7 +50,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.pizza-title {
+  margin-bottom: 2rem;
 }
 
 .toppings {
@@ -78,6 +82,17 @@
   margin-top: 1rem;
 }
 
+.gluten-free {
+  text-align: center;
+}
+
 #submit {
   margin-top: 2rem;
+}
+
+.log-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
